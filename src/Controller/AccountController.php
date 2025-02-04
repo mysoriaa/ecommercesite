@@ -8,11 +8,15 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class AccountController extends AbstractController
 {
-    #[Route('/account', name: 'app_account')]
+    #[Route('/compte', name: 'app_account')]
     public function index(): Response
     {
-        return $this->render('account/index.html.twig', [
-            'controller_name' => 'AccountController',
-        ]);
+        return $this->render('account/index.html.twig');
+    }
+
+    #[Route('/compte/modifier-mot-de-passe', name: 'app_account_modify_password')]
+    public function password(): Response
+    {
+        return $this->render('account/password.html.twig');
     }
 }
